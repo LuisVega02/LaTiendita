@@ -16,12 +16,27 @@ namespace LaEsquinita
             productoId = id;
         }
 
-        private void FormProductoEditar_Load(object sender, EventArgs e)
+        private void FormProductoEditar_Load_1(object sender, EventArgs e)
         {
             CargarCombos();
 
             if (productoId.HasValue)
                 CargarProducto();
+                btnEliminar.Visible = true;
+        }
+
+        private bool ProductoTieneReferencias()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM DetalleEntrada WHERE productoID = @id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", productoId.Value);
+
+                conn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
         }
 
         private void CargarCombos()
@@ -69,18 +84,33 @@ namespace LaEsquinita
                 {
                     if (reader.Read())
                     {
-                        txtNombre.Text = reader["nombre"].ToString();
-                        txtPrecio.Text = reader["precio"].ToString();
-                        txtStock.Text = reader["stock"].ToString();
-                        txtStockMinimo.Text = reader["stockMinimo"].ToString();
+                        // Leer todo primero
+                        string nombre = reader["nombre"].ToString();
+                        string precio = reader["precio"].ToString();
+                        string stock = reader["stock"].ToString();
+                        string stockMinimo = reader["stockMinimo"].ToString();
+                        int categoriaID = Convert.ToInt32(reader["categoriaID"]);
+                        int proveedorID = Convert.ToInt32(reader["proveedorID"]);
+                        int tipoUnidadID = Convert.ToInt32(reader["tipoUnidadID"]);
 
-                        cmbCategoria.SelectedValue = reader["categoriaID"];
-                        cmbProveedor.SelectedValue = reader["proveedorID"];
-                        cmbUnidad.SelectedValue = reader["tipoUnidadID"];
+                        // Luego usar los datos
+                        txtNombre.Text = nombre;
+                        txtPrecio.Text = precio;
+                        txtStock.Text = stock;
+                        txtStockMinimo.Text = stockMinimo;
+
+                        // Invocar asincrónicamente para esperar que los combos estén listos
+                        this.BeginInvoke(new Action(() =>
+                        {
+                            cmbCategoria.SelectedValue = categoriaID;
+                            cmbProveedor.SelectedValue = proveedorID;
+                            cmbUnidad.SelectedValue = tipoUnidadID;
+                        }));
                     }
                 }
             }
         }
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -149,5 +179,48 @@ namespace LaEsquinita
         {
             this.Close();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (!productoId.HasValue)
+                return;
+
+            if (ProductoTieneReferencias())
+            {
+                MessageBox.Show("No se puede eliminar el producto porque está relacionado con movimientos de inventario.", "Operación no permitida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var confirmResult = MessageBox.Show(
+                "¿Estás seguro de que deseas eliminar este producto? Esta acción no se puede deshacer.",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = "DELETE FROM Producto WHERE id = @id";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@id", productoId.Value);
+
+                    try
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Producto eliminado correctamente.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult = DialogResult.OK;
+                        Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al eliminar el producto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
     }
 }

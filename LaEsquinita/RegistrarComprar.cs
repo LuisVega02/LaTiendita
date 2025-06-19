@@ -211,15 +211,20 @@ namespace LaEsquinita
 
                 try
                 {
+                    // 1. Registrar entrada y movimiento
+                    int entradaId = RegistrarEntrada(conexion, transaction);
+
+                    // 2. Registrar detalles de la entrada y actualizar stock
                     foreach (DataRow row in productosAgregados.Rows)
                     {
                         int productoId = (int)row["productoID"];
                         int cantidad = (int)row["cantidad"];
                         decimal valorUnitario = (decimal)row["valorUnitario"];
 
-                        //RegistrarDetalleEntrada(conexion, transaction, entradaId, productoId, cantidad, valorUnitario);
+                        // Registrar detalle
+                        RegistrarDetalleEntrada(conexion, transaction, entradaId, productoId, cantidad, valorUnitario);
 
-                        // Opcional: actualizar stock
+                        // Actualizar stock
                         string queryStock = "UPDATE Producto SET stock = stock + @cantidad WHERE id = @id";
                         using (SqlCommand cmd = new SqlCommand(queryStock, conexion, transaction))
                         {
@@ -228,27 +233,38 @@ namespace LaEsquinita
                             cmd.ExecuteNonQuery();
                         }
                     }
+
+                    // 3. Confirmar cambios
+                    transaction.Commit();
+
+                    MessageBox.Show("Compra registrada exitosamente.", "Éxito",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // 4. Limpiar formulario y tabla de productos
                     LimpiarFormulario();
+                    productosAgregados.Clear();
+                    dgvProdVent.DataSource = null;
                 }
                 catch (Exception ex)
                 {
                     transaction.Rollback();
                     MessageBox.Show($"Error al registrar la compra: {ex.Message}", "Error",
-                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        private void RegistrarDetalleEntrada(SqlConnection conexion, SqlTransaction transaction, int entradaId, int productoId)
+        private void RegistrarDetalleEntrada(SqlConnection conexion, SqlTransaction transaction, int entradaId, int productoId, int cantidad, decimal valorUnitario)
         {
             string query = @"INSERT INTO DetalleEntrada 
-                           (productoID, cantidad, valorUnitario, entradaID) 
-                           VALUES (@productoID, @cantidad, @valorUnitario, @entradaID)";
+                     (productoID, cantidad, valorUnitario, entradaID) 
+                     VALUES (@productoID, @cantidad, @valorUnitario, @entradaID)";
 
             using (SqlCommand cmd = new SqlCommand(query, conexion, transaction))
             {
                 cmd.Parameters.AddWithValue("@productoID", productoId);
-                cmd.Parameters.AddWithValue("@cantidad", Convert.ToInt32(txtCantidad.Text));
+                cmd.Parameters.AddWithValue("@cantidad", cantidad);
+                cmd.Parameters.AddWithValue("@valorUnitario", valorUnitario);
                 cmd.Parameters.AddWithValue("@entradaID", entradaId);
 
                 cmd.ExecuteNonQuery();
@@ -382,17 +398,18 @@ namespace LaEsquinita
             // Verificar si el producto ya fue agregado
             foreach (DataRow row in productosAgregados.Rows)
             {
-                if ((int)row["productoID"] == productoId)
+                if (row["productoID"] != DBNull.Value && Convert.ToInt32(row["productoID"]) == productoId)
                 {
-                    row["cantidad"] = (int)row["cantidad"] + cantidad;
-                    row["subtotal"] = (decimal)row["cantidad"] * (decimal)row["valorUnitario"];
+                    int nuevaCantidad = Convert.ToInt32(row["cantidad"]) + cantidad;
+                    row["cantidad"] = nuevaCantidad;
+                    row["subtotal"] = nuevaCantidad * Convert.ToDecimal(row["valorUnitario"]);
                     productosAgregados.AcceptChanges();
                     CalcularTotalesCompra();
                     return;
                 }
             }
 
-            // Agregar nuevo
+            // ✅ Si no estaba, lo agregamos aquí:
             productosAgregados.Rows.Add(productoId, nombre, cantidad, precio, subtotal);
             CalcularTotalesCompra();
         }
@@ -414,5 +431,19 @@ namespace LaEsquinita
             Productos formularioProductos = new Productos(); // <- formulario que implementa CRUD
             formularioProductos.ShowDialog();
         }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            using (SeleccionarProducto selector = new SeleccionarProducto())
+            {
+                if (selector.ShowDialog() == DialogResult.OK)
+                {
+                    // Usamos el nombre directamente en txtProducto
+                    txtProducto.Text = selector.NombreProductoSeleccionado;
+                    txtProducto.Tag = selector.ProductoIDSeleccionado; // Guarda el ID por si se requiere
+                }
+            }
+        }
+
     }
 }

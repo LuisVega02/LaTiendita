@@ -1,6 +1,6 @@
 ﻿namespace LaEsquinita
 {
-    partial class Productos
+    partial class SeleccionarProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -28,74 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.cmbProveedor = new System.Windows.Forms.ComboBox();
+            this.cmbCategorias = new System.Windows.Forms.ComboBox();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.btnBuscarProd = new System.Windows.Forms.Button();
             this.txtProductos = new System.Windows.Forms.TextBox();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.cmbCategorias = new System.Windows.Forms.ComboBox();
-            this.cmbProveedor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
+            // cmbProveedor
+            // 
+            this.cmbProveedor.FormattingEnabled = true;
+            this.cmbProveedor.Location = new System.Drawing.Point(388, 10);
+            this.cmbProveedor.Name = "cmbProveedor";
+            this.cmbProveedor.Size = new System.Drawing.Size(121, 24);
+            this.cmbProveedor.TabIndex = 12;
+            // 
+            // cmbCategorias
+            // 
+            this.cmbCategorias.FormattingEnabled = true;
+            this.cmbCategorias.Location = new System.Drawing.Point(258, 10);
+            this.cmbCategorias.Name = "cmbCategorias";
+            this.cmbCategorias.Size = new System.Drawing.Size(121, 24);
+            this.cmbCategorias.TabIndex = 11;
+            // 
+            // dgvProductos
+            // 
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(12, 40);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.RowHeadersWidth = 51;
+            this.dgvProductos.RowTemplate.Height = 24;
+            this.dgvProductos.Size = new System.Drawing.Size(497, 306);
+            this.dgvProductos.TabIndex = 10;
+            this.dgvProductos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
+            this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
+            // 
             // btnBuscarProd
             // 
-            this.btnBuscarProd.Location = new System.Drawing.Point(197, 12);
+            this.btnBuscarProd.Location = new System.Drawing.Point(197, 11);
             this.btnBuscarProd.Name = "btnBuscarProd";
             this.btnBuscarProd.Size = new System.Drawing.Size(55, 23);
-            this.btnBuscarProd.TabIndex = 4;
+            this.btnBuscarProd.TabIndex = 9;
             this.btnBuscarProd.Text = "🔍";
             this.btnBuscarProd.UseVisualStyleBackColor = true;
             this.btnBuscarProd.Click += new System.EventHandler(this.btnBuscarProd_Click);
             // 
             // txtProductos
             // 
-            this.txtProductos.Location = new System.Drawing.Point(12, 12);
+            this.txtProductos.Location = new System.Drawing.Point(12, 11);
             this.txtProductos.Name = "txtProductos";
             this.txtProductos.Size = new System.Drawing.Size(179, 22);
-            this.txtProductos.TabIndex = 3;
-            this.txtProductos.TextChanged += new System.EventHandler(this.txtProductos_TextChanged);
+            this.txtProductos.TabIndex = 8;
             // 
-            // dgvProductos
-            // 
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(12, 41);
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.RowHeadersWidth = 51;
-            this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.Size = new System.Drawing.Size(497, 306);
-            this.dgvProductos.TabIndex = 5;
-            this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
-            // 
-            // cmbCategorias
-            // 
-            this.cmbCategorias.FormattingEnabled = true;
-            this.cmbCategorias.Location = new System.Drawing.Point(258, 11);
-            this.cmbCategorias.Name = "cmbCategorias";
-            this.cmbCategorias.Size = new System.Drawing.Size(121, 24);
-            this.cmbCategorias.TabIndex = 6;
-            this.cmbCategorias.SelectedIndexChanged += new System.EventHandler(this.cmbCategorias_SelectedIndexChanged);
-            // 
-            // cmbProveedor
-            // 
-            this.cmbProveedor.FormattingEnabled = true;
-            this.cmbProveedor.Location = new System.Drawing.Point(388, 11);
-            this.cmbProveedor.Name = "cmbProveedor";
-            this.cmbProveedor.Size = new System.Drawing.Size(121, 24);
-            this.cmbProveedor.TabIndex = 7;
-            this.cmbProveedor.SelectedIndexChanged += new System.EventHandler(this.cmbProveedor_SelectedIndexChanged);
-            // 
-            // Productos
+            // SeleccionarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 359);
+            this.ClientSize = new System.Drawing.Size(548, 374);
             this.Controls.Add(this.cmbProveedor);
             this.Controls.Add(this.cmbCategorias);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.btnBuscarProd);
             this.Controls.Add(this.txtProductos);
-            this.Name = "Productos";
-            this.Text = "Productos";
-            this.Load += new System.EventHandler(this.Productos_Load);
+            this.Name = "SeleccionarProducto";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.SeleccionarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -104,10 +102,10 @@
 
         #endregion
 
+        private System.Windows.Forms.ComboBox cmbProveedor;
+        private System.Windows.Forms.ComboBox cmbCategorias;
+        private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Button btnBuscarProd;
         private System.Windows.Forms.TextBox txtProductos;
-        private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.ComboBox cmbCategorias;
-        private System.Windows.Forms.ComboBox cmbProveedor;
     }
 }

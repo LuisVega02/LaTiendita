@@ -1,30 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\",
+  "WorkspaceRootPath": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|solutionrelative:productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|c:\\users\\luise\\downloads\\laesquinita\\laesquinita\\registrarcomprar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|solutionrelative:registrarcomprar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|c:\\users\\luise\\downloads\\laesquinita\\laesquinita\\formproductoeditar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|solutionrelative:formproductoeditar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|c:\\users\\luise\\downloads\\laesquinita\\laesquinita\\formproductoeditar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|solutionrelative:formproductoeditar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|solutionrelative:productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\registrarcomprar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|c:\\users\\luise\\downloads\\laesquinita\\latiendita\\laesquinita\\seleccionarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|solutionrelative:seleccionarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|c:\\users\\luise\\downloads\\laesquinita\\latiendita\\laesquinita\\registrarcomprar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|solutionrelative:registrarcomprar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\registrarcomprar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|solutionrelative:registrarcomprar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|c:\\users\\luise\\downloads\\laesquinita\\latiendita\\laesquinita\\seleccionarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|solutionrelative:seleccionarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|c:\\users\\luise\\downloads\\laesquinita\\latiendita\\laesquinita\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2784A48-DFDE-47EB-8155-89486129C984}|LaEsquinita.csproj|solutionrelative:productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,53 +34,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormProductoEditar.cs",
-              "DocumentMoniker": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\FormProductoEditar.cs",
-              "RelativeDocumentMoniker": "FormProductoEditar.cs",
-              "ToolTip": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\FormProductoEditar.cs",
-              "RelativeToolTip": "FormProductoEditar.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "SeleccionarProducto.cs",
+              "DocumentMoniker": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\SeleccionarProducto.cs",
+              "RelativeDocumentMoniker": "SeleccionarProducto.cs",
+              "ToolTip": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\SeleccionarProducto.cs",
+              "RelativeToolTip": "SeleccionarProducto.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAArwHIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T13:38:19.759Z",
+              "WhenOpened": "2025-06-19T00:57:39.967Z",
+              "IsPinned": true,
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormProductoEditar.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\FormProductoEditar.cs",
-              "RelativeDocumentMoniker": "FormProductoEditar.cs",
-              "ToolTip": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\FormProductoEditar.cs [Dise\u00F1o]",
-              "RelativeToolTip": "FormProductoEditar.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T13:31:33.063Z",
-              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RegistrarComprar.cs",
-              "DocumentMoniker": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\RegistrarComprar.cs",
-              "RelativeDocumentMoniker": "RegistrarComprar.cs",
-              "ToolTip": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\RegistrarComprar.cs",
-              "RelativeToolTip": "RegistrarComprar.cs",
-              "ViewState": "AgIAAHYBAAAAAAAAAAAUwIMBAAAUAAAAAAAAAA==",
+              "Title": "SeleccionarProducto.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\SeleccionarProducto.cs",
+              "RelativeDocumentMoniker": "SeleccionarProducto.cs",
+              "ToolTip": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\SeleccionarProducto.cs [Dise\u00F1o]",
+              "RelativeToolTip": "SeleccionarProducto.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T22:42:32.447Z",
+              "WhenOpened": "2025-06-19T00:56:19.693Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegistrarComprar.cs",
+              "DocumentMoniker": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\RegistrarComprar.cs",
+              "RelativeDocumentMoniker": "RegistrarComprar.cs",
+              "ToolTip": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\RegistrarComprar.cs",
+              "RelativeToolTip": "RegistrarComprar.cs",
+              "ViewState": "AgIAALUAAAAAAAAAAAAgwAIBAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T00:35:18.658Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "RegistrarComprar.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\RegistrarComprar.cs",
+              "DocumentMoniker": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\RegistrarComprar.cs",
               "RelativeDocumentMoniker": "RegistrarComprar.cs",
-              "ToolTip": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\RegistrarComprar.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\RegistrarComprar.cs [Dise\u00F1o]",
               "RelativeToolTip": "RegistrarComprar.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-04T22:42:21.876Z",
@@ -88,11 +89,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Productos.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\Productos.cs",
+              "DocumentMoniker": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\Productos.cs",
               "RelativeDocumentMoniker": "Productos.cs",
-              "ToolTip": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\Productos.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\Productos.cs [Dise\u00F1o]",
               "RelativeToolTip": "Productos.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-04T22:47:10.284Z",
@@ -100,13 +101,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Productos.cs",
-              "DocumentMoniker": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\Productos.cs",
+              "DocumentMoniker": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\Productos.cs",
               "RelativeDocumentMoniker": "Productos.cs",
-              "ToolTip": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaEsquinita\\Productos.cs",
+              "ToolTip": "C:\\Users\\luise\\Downloads\\LaEsquinita\\LaTiendita\\LaEsquinita\\Productos.cs",
               "RelativeToolTip": "Productos.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAowIEAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAnwKwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-04T22:47:16.591Z",
               "EditorCaption": ""

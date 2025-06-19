@@ -1,40 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LaEsquinita
 {
-    public partial class Productos : Form
+    public partial class SeleccionarProducto : Form
     {
         private string connectionString = "Data Source=.;Initial Catalog=InventarioLaEsquinita;Integrated Security=True";
         private DataTable productosOriginales;
-
-        public Productos()
+        public int ProductoIDSeleccionado { get; private set; }
+        public string NombreProductoSeleccionado { get; private set; }
+        public SeleccionarProducto()
         {
             InitializeComponent();
-        }
-
-        private void Productos_Load(object sender, EventArgs e)
-        {
             CargarComboboxes();
             CargarProductos();
-            EstilizarGrilla();
-            dgvProductos.CellDoubleClick += dgvProductos_CellDoubleClick;
+
         }
-
-        private void EstilizarGrilla()
-        {
-            dgvProductos.ReadOnly = true;
-            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProductos.MultiSelect = false;
-            dgvProductos.AllowUserToAddRows = false;
-            dgvProductos.AllowUserToAddRows = true;
-            dgvProductos.AllowUserToDeleteRows = false;
-        }
-
-
-
         private void CargarComboboxes()
         {
             using (SqlConnection conexion = new SqlConnection(connectionString))
@@ -83,6 +72,7 @@ namespace LaEsquinita
             }
         }
 
+
         private void btnBuscarProd_Click(object sender, EventArgs e)
         {
             FiltrarProductos();
@@ -114,71 +104,27 @@ namespace LaEsquinita
             dgvProductos.DataSource = vista;
         }
 
-        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-
-        }
-
-        private void btnAgregarProducto_Click(object sender, EventArgs e)
-        {
-            FormProductoEditar frmNuevo = new FormProductoEditar(); // sin ID para nuevo
-            if (frmNuevo.ShowDialog() == DialogResult.OK)
-            {
-                CargarProductos();
-            }
-        }
-
         private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
-
-            // Si es la fila nueva vacía
-            if (dgvProductos.AllowUserToAddRows && e.RowIndex == dgvProductos.Rows.Count - 1)
+            if (e.RowIndex >= 0)
             {
-                // Abrir formulario para nuevo producto
-                FormProductoEditar frmNuevo = new FormProductoEditar(); // sin ID = modo nuevo
-                if (frmNuevo.ShowDialog() == DialogResult.OK)
-                {
-                    CargarProductos(); // Recargar grilla
-                }
-                return;
-            }
+                DataGridViewRow fila = dgvProductos.Rows[e.RowIndex];
+                ProductoIDSeleccionado = Convert.ToInt32(fila.Cells["id"].Value);
+                NombreProductoSeleccionado = fila.Cells["nombre"].Value.ToString();
 
-            // Resto: edición de producto existente
-            string nombre = dgvProductos.Rows[e.RowIndex].Cells["nombre"].Value.ToString();
-
-            DialogResult confirmar = MessageBox.Show(
-                $"¿Deseas editar el producto '{nombre}'?\nAsegúrate de revisar los datos antes de guardar.",
-                "Confirmar edición",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            );
-
-            if (confirmar == DialogResult.Yes)
-            {
-                int productoId = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells["id"].Value);
-                FormProductoEditar frmEditar = new FormProductoEditar(productoId);
-                if (frmEditar.ShowDialog() == DialogResult.OK)
-                {
-                    CargarProductos();
-                }
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
 
-        private void txtProductos_TextChanged(object sender, EventArgs e)
+        private void SeleccionarProducto_Load(object sender, EventArgs e)
         {
+            dgvProductos.ReadOnly = true;
+            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProductos.AllowUserToAddRows = false;
+            dgvProductos.AllowUserToDeleteRows = false;
 
-        }
-
-        private void cmbCategorias_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbProveedor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            dgvProductos.CellDoubleClick += dgvProductos_CellDoubleClick;
         }
     }
 }
